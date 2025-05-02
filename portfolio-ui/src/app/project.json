@@ -1,0 +1,242 @@
+[
+    {
+      "id": "001",
+      "title": "Scholerly ",
+      "responsive": "/Image/scolerly/resScholer.png",
+      "imageOne": "/Image/scolerly/screencapture-sholerly-client-vercel-app-2025-05-02-16_38_20.png",
+      "imageTwo":  "/Image/scolerly/screencapture-sholerly-client-vercel-app-all-tutor-2025-05-02-16_39_08.png",
+      "description": "Scholerly is a modern tutoring platform that connects students with tutors. It offers a seamless user experience and robust backend infrastructure, featuring real-time notifications, secure role-based routing, and integrated payment functionality.",
+      "features": [
+  "Modular Architecture: Clean service-controller separation following industry best practices.",
+  "JWT Authentication: Secure access for students, tutors, and admins using token-based auth.",
+  "Dual-Model Tutor Registration: Tutor info stored in both User and Tutor collections for flexibility.",
+  "Booking System: Students can book sessions with tutors.",
+  "SurjoPay Integration: Secure and simple online payments for booked sessions.",
+  "Admin Approval: Tutors require admin approval before becoming active.",
+  "Real-time Notifications: Socket.IO alerts for tutor registration, bookings, and approvals.",
+  "Advanced QueryBuilder: Flexible filtering and pagination support for list endpoints."
+]
+,
+      "frontendTech": [
+        { "name": "Next.js 15", "icon": "nextjs-icon" },
+        { "name": "TypeScript", "icon": "typescript-icon" },
+        { "name": "Tailwind CSS", "icon": "tailwind-icon" },
+        { "name": "Ant Design", "icon": "antdesign-icon" },
+        { "name": "FormData", "icon": "form-icon" },
+        { "name": "Socket.IO", "icon": "socketio-icon" },
+        { "name": "SurjoPay", "icon": "surjopay-icon" },
+        { "name": "Context API", "icon": "context-icon" },
+        { "name": "JWT", "icon": "jwt-icon" }
+      ],
+      "backendTech": [
+        { "name": "Node.js", "icon": "nodejs-icon" },
+        { "name": "Express.js", "icon": "express-icon" },
+        { "name": "TypeScript", "icon": "typescript-icon" },
+        { "name": "MongoDB", "icon": "mongodb-icon" },
+        { "name": "Mongoose", "icon": "mongoose-icon" },
+        { "name": "Zod", "icon": "zod-icon" },
+        { "name": "JWT", "icon": "jwt-icon" },
+        { "name": "Socket.IO", "icon": "socketio-icon" },
+        { "name": "SurjoPay", "icon": "surjopay-icon" }
+      ],
+      "github": {
+        "frontend": "https://github.com/Pritom003/Scholerly-client",
+        "backend": "https://github.com/Pritom003/Scholerly-server"
+      },
+      "live": {
+        "frontend": "https://scholerly.vercel.app",
+        "backend": "https://scholerly-server.vercel.app"
+      },
+      "type": "Full Stack"
+    },
+    {
+      "id": "002",
+      "title": "Chapters & Co. ",
+      "responsive": "/Image/cnc/responsivecn.png",
+      "imageOne": "/Image/cnc/screencapture-book-shop-frontend-lemon-vercel-app-2025-05-02-16_33_42.png",
+      "imageTwo":  "/Image/cnc/screencapture-book-shop-frontend-lemon-vercel-app-all-books-2025-05-02-16_34_50.png",
+      "description": "Chapters & Co. is a feature-rich online bookshop built with a modern MERN stack. It includes secure authentication, a seller dashboard for book uploads, a user-friendly cart and payment system, and a responsive UI with smooth transitions.",
+      "features": [
+    "Book Shop MERN Stack: Integrated with a MongoDB, Express.js, React, and Node.js backend.",
+    "Modern UI/UX: Designed using Ant Design with Tailwind CSS for additional styling.",
+    "Authentication: User login and registration implemented.",
+    "Book Listings: Fetches book data from the backend.",
+    "Admin Dashboard: Allows sellers to post books to the database.",
+    "Cart & Payment System: Users can add books to the cart and proceed with checkout.",
+    "Fully Responsive: Optimized for all screen sizes.",
+    "Dark Overlay Hero Section: Beautiful introduction to the bookshop."
+  ],
+      "frontendTech": [
+        { "name": "React", "icon": "react-icon" },
+        { "name": "TypeScript", "icon": "typescript-icon" },
+        { "name": "Ant Design", "icon": "antdesign-icon" },
+        { "name": "Tailwind CSS", "icon": "tailwind-icon" },
+        { "name": "Redux Toolkit", "icon": "redux-icon" },
+        { "name": "React Hook Form", "icon": "hookform-icon" },
+        { "name": "React Router DOM", "icon": "router-icon" }
+      ],
+      "backendTech": [
+        { "name": "Node.js", "icon": "nodejs-icon" },
+        { "name": "Express.js", "icon": "express-icon" },
+        { "name": "MongoDB", "icon": "mongodb-icon" },
+        { "name": "Mongoose", "icon": "mongoose-icon" },
+        { "name": "TypeScript", "icon": "typescript-icon" }
+      ],
+      "github": {
+        "frontend": "https://github.com/Pritom003/book-shop-frontend",
+        "backend": "https://github.com/Pritom003/book-shop-backend"
+      },
+      "live": {
+        "frontend": "https://book-shop-frontend-lemon.vercel.app/",
+        "backend": "https://book-shop-backend-navy.vercel.app"
+      },
+      "type": "Full Stack"
+    },
+    {
+        "id": "006",
+        "title": "Event Planet",
+        "responsive": "/Image/EventPlaner/responsevnt.png",
+        "imageOne": "/Image/EventPlaner/screencapture-event-planet-9789f-web-app-2025-05-02-16_41_50.png",
+        "imageTwo":"/Image/EventPlaner/screencapture-event-planet-9789f-web-app-event-2025-05-02-16_41_27.png",
+        "description": "Event Planet is a comprehensive event management and booking platform designed for both organizers and attendees. It supports event creation, ticketing, reminders, chat, live support, and even an e-commerce shop for event-related merchandise.",
+        "features": [
+  "Event Creation: Easily create and customize educational and training events with detailed information like type, date, time, and location.",
+  "Registration Management: Collect attendee information and manage registrations with an intuitive registration form.",
+  "Event Promotion: Share events via social media and email invitations to expand reach and increase attendance.",
+  "Participant Engagement: Boost interaction with live chat, polls, and Q&A features during events.",
+  "Real-time Analytics: Track event performance with live data on registrations, attendance, and engagement metrics.",
+  "Secure Payments: Enable online payments for paid events with a secure and streamlined process.",
+  "Responsive Design: Fully optimized for all screen sizes, ensuring accessibility on desktops, tablets, and smartphones."
+],
+        "frontendTech": [
+          { "name": "React.js", "icon": "react-icon" },
+          { "name": "Redux", "icon": "redux-icon" },
+          { "name": "Tailwind CSS", "icon": "tailwind-icon" },
+          { "name": "Axios", "icon": "axios-icon" }
+        ],
+        "backendTech": [
+          { "name": "Node.js", "icon": "nodejs-icon" },
+          { "name": "Express.js", "icon": "express-icon" },
+          { "name": "MongoDB", "icon": "mongodb-icon" },
+          { "name": "Mongoose", "icon": "mongoose-icon" },
+          { "name": "Firebase", "icon": "firebase-icon" },
+          { "name": "JWT", "icon": "jwt-icon" }
+        ],
+        "github": {
+          "frontend": "https://github.com/yourusername/eventplanet-client",
+          "backend": "https://github.com/yourusername/eventplanet-server"
+        },
+        "live": {
+          "frontend": "https://eventplanet.vercel.app"
+        },
+        "type": "Full Stack"
+      },
+      
+    {
+        "id": "003",
+        "title": "UrbanNestHub ",
+        "responsive": "/Image/Urban/resUrban.png",
+        "imageOne": "/Image/Urban/screencapture-urbannesthubs-d6f4b-web-app-2025-05-02-16_43_56.png",
+        "imageTwo": "/Image/Urban/screencapture-urbannesthubs-d6f4b-web-app-allproperties-2025-05-02-16_44_40.png",
+        "description": "UrbanNestHub is a real estate platform designed to connect clients with agents and streamline property transactions. It features a robust role-based system, secure authentication, and Stripe integration for property payments.",
+        "features": [
+  "Role-Based Access: Separate functionalities for Admin, Agent, and Client users.",
+  "User Management: Admin can promote users to agents or revoke agent status.",
+  "Property Listing Workflow: Agents can create and manage property listings.",
+  "Admin Control: Admin reviews and approves or cancels agent-submitted listings.",
+  "Listing Cancellation: Agents can cancel their listings, automatically disqualifying the property.",
+  "Client Browsing: Clients can view all approved property listings.",
+  "Agent Communication: Clients can directly contact agents for inquiries.",
+  "Stripe Payment Integration: Secure online payments for property purchases via Stripe."
+]
+,
+        "frontendTech": [
+          { "name": "React", "icon": "react-icon" },
+          { "name": "Tailwind CSS", "icon": "tailwind-icon" },
+          { "name": "Material-UI", "icon": "mui-icon" },
+          { "name": "Firebase", "icon": "firebase-icon" },
+          { "name": "Stripe", "icon": "stripe-icon" }
+        ],
+        "backendTech": [
+          { "name": "Node.js", "icon": "nodejs-icon" },
+          { "name": "MongoDB", "icon": "mongodb-icon" },
+          { "name": "Firebase", "icon": "firebase-icon" }
+        ],
+        "github": {
+          "frontend": "https://github.com/Pritom003/urbannesthub-client",
+          "backend": "https://github.com/Pritom003/urbannesthub-server"
+        },
+        "live": {
+          "frontend": "https://urbannesthub.vercel.app",
+          "backend": "https://urbannesthub-server.vercel.app"
+        },
+        "type": "Full Stack"
+      },
+      {
+        "id": "004",
+        "title": "BrandBoulevard ",
+        "responsive": "/Image/Brandshorp/responBrand.png",
+        "imageOne": "/Image/Brandshorp/screencapture-brand-shop-6c3e0-web-app-2025-05-02-16_49_26.png",
+        "imageTwo": "/Image/Brandshorp/screencapture-brand-shop-6c3e0-web-app-product-NIKE-2025-05-02-16_50_32.png",
+        "description": "BrandBoulevard is an e-commerce platform that showcases premium products from top global brands. It features smooth navigation with React Router, Firebase-powered authentication and database, and a clean modern UI with Tailwind CSS.",
+       "features": [
+  "Diverse Product Listings: Browse a wide selection of products from top fashion and lifestyle brands.",
+  "User Authentication: Secure account creation and login for a personalized shopping experience.",
+  "Personalized Experience: Enjoy tailored recommendations and streamlined order tracking.",
+  "Real-time Updates: Integrated with Firebase for live updates on product availability and order status.",
+  "Responsive Design: Optimized for seamless use across mobile, tablet, and desktop devices."
+]
+,
+        "frontendTech": [
+          { "name": "React", "icon": "react-icon" },
+          { "name": "React Router", "icon": "react-router-icon" },
+          { "name": "Tailwind CSS", "icon": "tailwind-icon" }
+        ],
+        "backendTech": [
+          { "name": "Firebase", "icon": "firebase-icon" }
+        ],
+        "github": {
+          "frontend": "https://github.com/Pritom003/brandboulevard-client"
+        },
+        "live": {
+          "frontend": "https://brandboulevard.vercel.app"
+        },
+        "type": "Full Stack"
+      },{
+        "id": "005",
+        "title": "KnowledgeJunctionX ",
+        "responsive": "/Image/Knowledgejunc/responsivek.png",
+        "imageOne": "/Image/Knowledgejunc/screencapture-knowledge-junction-32fe4-web-app-2025-05-02-16_50_57.png",
+        "imageTwo":"/Image/Knowledgejunc/screencapture-knowledge-junction-32fe4-web-app-details-2-2025-05-02-16_52_01.png",
+        "description": "KnowledgeJunctionX is an educational and training event management platform that allows educators and organizers to create, manage, and promote events with ease. It features real-time analytics, secure payments, participant engagement tools, and a responsive interface.",
+        "features": [
+  "Event Creation: Easily create and customize educational and training events with detailed information including event type, date, time, and location.",
+  "Registration Management: Streamline participant registration with a user-friendly registration form, making it easy to collect and manage attendee data.",
+  "Event Promotion: Promote events through integrated social media sharing and email invitations to boost visibility and attendance.",
+  "Participant Engagement: Improve attendee experience with interactive features such as live chat, polls, and Q&A sessions.",
+  "Real-time Analytics: Monitor event performance with real-time data on registrations, attendance, and engagement.",
+  "Secure Payments: Allow secure online payments for paid events, ensuring a smooth and safe transaction process.",
+  "Responsive Design: Fully responsive layout accessible across desktop, tablet, and mobile devices."
+]
+,
+        "frontendTech": [
+          { "name": "React", "icon": "react-icon" },
+          { "name": "React Router", "icon": "react-router-icon" },
+          { "name": "Tailwind CSS", "icon": "tailwind-icon" }
+        ],
+        "backendTech": [
+          { "name": "Firebase", "icon": "firebase-icon" }
+        ],
+        "github": {
+          "frontend": "https://github.com/Pritom003/knowledgejunctionx-client"
+        },
+        "live": {
+          "frontend": "https://knowledgejunctionx.vercel.app"
+        },
+        "type": "Full Stack"
+      }
+      
+      
+      
+  ]
+  

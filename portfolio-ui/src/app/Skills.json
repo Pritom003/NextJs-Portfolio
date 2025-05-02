@@ -1,0 +1,73 @@
+[
+    {
+      "name": "React js",
+      "image": "https://i.ibb.co/n04mj2W/react.png",
+      "Knowledle":"skilled"
+    },
+    {
+      "name": "JavaScript",
+      "image": "https://i.ibb.co/zscH6dZ/js.png",
+      "Knowledle":"skilled"
+    },
+    {
+      "name": "Tailwind CSS",
+      "image": "https://i.ibb.co/2qZrDpq/tailwind-css-icon.png"
+       ,
+      "Knowledle":"skilled"
+    },
+    {
+      "name": "GitHub",
+      "image": "https://i.ibb.co/M1tBk7L/github.png"
+      ,
+      "Knowledle":"skilled"
+    },
+    {
+      "name": "Node js",
+      "image": "https://i.ibb.co/92rsDL5/nodejs.png"
+      ,
+      "Knowledle":"skilled"
+    },
+    {
+      "name": "Express js",
+      "image": "https://i.ibb.co/K7sBCbf/express.png"
+      ,
+      "Knowledle":"skilled"
+    },
+    {
+      "name": "MongoDB",
+      "image": "https://i.ibb.co/DRMRjHf/mongodb.png"
+      ,
+      "Knowledle":"skilled"
+    },
+    {
+      "name": "Firebase",
+      "image": "https://i.ibb.co/nnmMj02/firebase.png"
+      ,
+      "Knowledle":"skilled"
+    },
+  
+    {
+      "name": "Next.js",
+      "image": "https://i.ibb.co/7RtwPwr/nextjs-1024x617.png" 
+       ,
+      "Knowledle":"comfortable"
+    },
+    {
+      "name": "GraphQL",
+      "image": "https://i.ibb.co/cvPZT0d/graphql-455x512.png" 
+      ,
+      "Knowledle":"comfortable"
+    },
+    {
+      "name": "WordPress",
+      "image": "https://i.ibb.co/XzT8XPF/wordpress-1024x1024.png" 
+      ,
+      "Knowledle":"comfortable"
+    },
+    {
+      "name": "Accessibility",
+      "image": "https://i.ibb.co/ns54cwz/preferences-desktop-accessibility-499x512.png"
+      ,
+      "Knowledle":"comfortable"
+    }
+  ]
