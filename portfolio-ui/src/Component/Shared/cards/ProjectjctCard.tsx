@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, image
   };
 
   return (
-    <div className="w-full max-w-md bg-[#231f1f] rounded-lg shadow-md overflow-hidden group">
+    <div className="w-full max-w-md bg-[#170117] rounded-lg shadow-md overflow-hidden group">
       {/* Top Section */}
       <div className="flex justify-between items-center px-4 pt-4">
         <h2 className="text-lg font-semibold">{title}</h2>

@@ -4,10 +4,13 @@ import React from 'react';
 import { useParams } from 'next/navigation';
 import projects from '@/app/project.json';
 import Image from 'next/image';
-// import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-
-import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import Container from '@/Component/Shared/Container';
+import {
+  GithubOutlined,
+  LinkOutlined,
+  CheckCircleOutlined,
+} from '@ant-design/icons';
 
 const ProjectDetailsPage = () => {
   const params = useParams();
@@ -20,8 +23,41 @@ const ProjectDetailsPage = () => {
 
   return (
     <div className="max-w-6xl mx-auto mt-10 p-6 space-y-12">
-      {/* Title */}
-      <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
+      {/* Title + ID */}
+      <div className="text-center space-y-2">
+      <h2 className="text-6xl lg:text-8xl  text-transparent
+     stroke-purple-500 stroke-1 uppercase font-extrabold
+      tracking-widest">
+     {project.title}
+    </h2>
+        {/* <h1 className="text-5xl font-bold text-white"></h1> */}
+        <p className="text-gray-400 text-lg">ID: {project.id}</p>
+      </div>
+
+      {/* Links */}
+      <div className="flex flex-wrap justify-center gap-6 text-white text-lg">
+        <a
+          href={project.github.frontend}
+          target="_blank"
+          className="flex items-center gap-2 hover:underline"
+        >
+          Frontend <GithubOutlined />
+        </a>
+        <a
+          href={project.github.backend}
+          target="_blank"
+          className="flex items-center gap-2 hover:underline"
+        >
+          Backend <GithubOutlined />
+        </a>
+        <a
+          href={project.live.frontend}
+          target="_blank"
+          className="flex items-center gap-2 hover:underline text-blue-500"
+        >
+          Live Site <LinkOutlined />
+        </a>
+      </div>
 
       {/* Main Image with Reflection */}
       <div className="relative w-full max-h-[500px] mb-6">
@@ -31,13 +67,15 @@ const ProjectDetailsPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Image
-              src={project.responsive}
-              alt={project.title}
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg shadow-md"
-            />
+            <a href={project.responsive} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={project.responsive}
+                alt={project.title}
+                layout="fill"
+                objectFit="contain"
+                className="rounded-lg shadow-md"
+              />
+            </a>
           </motion.div>
         </div>
         <div className="relative w-full h-[200px] mt-1 overflow-hidden transform scale-y-[-1] opacity-50">
@@ -51,40 +89,52 @@ const ProjectDetailsPage = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
         </div>
       </div>
-  {/* Description */}
-  <div className="md:w-1/2 h-full flex flex-col justify-between">
-    <p className="text-lg text-white mb-4">{project.description}</p>
-    <ul className="list-disc pl-5 space-y-2 text-white">
-  {project.features.map((feature, index) => (
-    <li key={index} className="flex gap-2 items-start">
-      <span className="text-yellow-400">👉</span>
-      <span>{feature}</span>
-    </li>
-  ))}
-</ul>
 
-    <div className="flex gap-4">
-      <a
-        href={project.live.frontend}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 hover:underline flex items-center gap-1"
-      >
-        Live Site <FaExternalLinkAlt />
-      </a>
-      <a
-        href={project.github.frontend}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white hover:underline flex items-center gap-1"
-      >
-        GitHub <FaGithub />
-      </a>
-    </div>
-  </div>
-      {/* Window Preview Section with Framer Motion */}
+      {/* Description + Features */}
+      <Container>
+        <div className="flex flex-col lg:flex-row gap-10">
+          <div className=" space-y-6  ">
+            <h2 className="text-2xl font-semibold">Project Description</h2>
+            <p className="text-lg text-white font-mono">{project.description}</p>
+            <h2 className="text-2xl font-semibold">Tech Stack</h2>
+            <div className="space-y-4 flex flex-col md:flex-row gap-4">
+            
+            <div>
+              <h3 className="font-semibold">Frontend</h3>
+              <div className="flex flex-wrap gap-4">
+                {project.frontendTech.map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full shadow-sm text-sm"
+                  >
+                    {tech.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold mt-4">Backend</h3>
+              <div className="flex flex-wrap gap-4">
+                {project.backendTech.map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="px-4 py-2 bg-green-100 text-green-800 rounded-full shadow-sm text-sm"
+                  >
+                    {tech.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          </div>
+
+          {/* Tech Stack */}
+         
+        </div>
+      </Container>
+
+      {/* Preview Section with Lights from Both Sides */}
       <div className="relative mt-20 space-y-6">
-        {/* Top Line */}
         <motion.div
           className="h-1 w-full bg-gray-300 rounded-full"
           initial={{ opacity: 0 }}
@@ -92,47 +142,36 @@ const ProjectDetailsPage = () => {
           transition={{ duration: 1 }}
         />
 
-        {/* Window View with Images */}
-        <div className="relative h-[300px] overflow-x-auto no-scrollbar flex items-center justify-center gap-10 px-4 bg-black">
-          {/* Light Shadow from Left */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/60 to-transparent pointer-events-none z-10" />
+        <div className="relative flex flex-col md:flex-row gap-6 justify-center items-center px-4 bg-black py-8 rounded-lg">
+          {/* Light Shadows */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white/30 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white/30 to-transparent z-10 pointer-events-none" />
 
-          {/* Image Container with Vertical Separator */}
-          <div className="flex-shrink-0 relative flex gap-6 items-center min-w-[700px]">
-            <motion.div
-              className="relative w-[300px] h-[250px] shadow-lg rounded overflow-hidden"
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <Image
-                src={project.imageOne}
-                alt="Preview One"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
+          {/* Image One */}
+          <motion.div
+            className="relative w-full max-w-[300px] h-[250px] shadow-lg rounded overflow-hidden"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <a href={project.imageOne} target="_blank" rel="noopener noreferrer">
+              <Image src={project.imageOne} alt="Preview One" fill className="object-cover" />
+            </a>
+          </motion.div>
 
-            {/* Vertical Line */}
-            <div className="h-[200px] w-[2px] bg-white/30" />
-
-            <motion.div
-              className="relative w-[300px] h-[250px] shadow-lg rounded overflow-hidden"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <Image
-                src={project.imageTwo}
-                alt="Preview Two"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-          </div>
+          {/* Image Two */}
+          <motion.div
+            className="relative w-full max-w-[300px] h-[250px] shadow-lg rounded overflow-hidden"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <a href={project.imageTwo} target="_blank" rel="noopener noreferrer">
+              <Image src={project.imageTwo} alt="Preview Two" fill className="object-cover" />
+            </a>
+          </motion.div>
         </div>
 
-        {/* Bottom Line */}
         <motion.div
           className="h-1 w-full bg-gray-300 rounded-full"
           initial={{ opacity: 0 }}
@@ -157,38 +196,21 @@ const ProjectDetailsPage = () => {
           </a>
         </motion.div>
       </div>
-      <div className="md:w-1/2 space-y-4">
-          <h2 className="text-2xl font-semibold">Tech Stack</h2>
-          <div>
-            <h3 className="font-semibold">Frontend</h3>
-            <div className="flex flex-wrap gap-4">
-              {project.frontendTech.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full shadow-sm text-sm"
-                >
-                  {tech.name}
-                </div>
+      <Container>
+      <div className='border-b-2 border-amber-950 pb-10'>    
+        <h2 className="text-2xl font-semibold my-10">Project Features </h2>
+            <ul className="space-y-2 text-white">
+              {project.features.map((feature, index) => (
+                <li key={index} className="flex gap-2 items-start">
+                  <CheckCircleOutlined className="text-green-400 mt-1" />
+                  <span>{feature}</span>
+                </li>
               ))}
+            </ul>
             </div>
-          </div>
-          <div>
-            <h3 className="font-semibold mt-4">Backend</h3>
-            <div className="flex flex-wrap gap-4">
-              {project.backendTech.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="px-4 py-2 bg-green-100 text-green-800 rounded-full shadow-sm text-sm"
-                >
-                  {tech.name}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      </Container>
     </div>
   );
 };
-
 
 export default ProjectDetailsPage;

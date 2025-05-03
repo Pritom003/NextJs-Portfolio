@@ -2,9 +2,9 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import MyImage from '../../../public/Image/nobg2.png';
-import { Button } from 'antd';
-import { ArrowRightOutlined } from '@ant-design/icons';
-import { motion} from 'framer-motion';
+
+import { motion } from 'framer-motion';
+
 const HomeBanner = () => {
   const mainTextRef = useRef<HTMLDivElement>(null);
   const shadow1Ref = useRef<HTMLDivElement>(null);
@@ -17,15 +17,9 @@ const HomeBanner = () => {
     const x = (clientX - left - width / 2) / 20;
     const y = (clientY - top - height / 2) / 20;
 
-    if (mainTextRef.current) {
-      mainTextRef.current.style.transform = `translate(${x}px, ${y}px)`;
-    }
-    if (shadow1Ref.current) {
-      shadow1Ref.current.style.transform = `translate(${x * 1.5}px, ${y * 1.5}px)`;
-    }
-    if (shadow2Ref.current) {
-      shadow2Ref.current.style.transform = `translate(${x * 2}px, ${y * 2}px)`;
-    }
+    if (mainTextRef.current) mainTextRef.current.style.transform = `translate(${x}px, ${y}px)`;
+    if (shadow1Ref.current) shadow1Ref.current.style.transform = `translate(${x * 1.5}px, ${y * 1.5}px)`;
+    if (shadow2Ref.current) shadow2Ref.current.style.transform = `translate(${x * 2}px, ${y * 2}px)`;
   };
 
   const handleMouseLeave = () => {
@@ -36,84 +30,64 @@ const HomeBanner = () => {
 
   return (
     <div
-      className="relative  w-full h-[80vh] flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden bg-black"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Shadow layers for depth */}
-      <div
-        ref={shadow2Ref}
-        className="absolute text-4xl md:text-6xl font-bold  font-oren text-gray-600 opacity-30 z-0 -translate-y-24 pointer-events-none select-none"
-      >
-        Crafting Web Experiences with Precision
+      {/* Text Layers */}
+      <div className="absolute z-0 flex flex-col items-center justify-center text-center pointer-events-none select-none">
+        <div className="absolute text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-oren text-black/30 translate-y-2">
+          Crafting Web Experiences with Precision
+        </div>
+        <div
+          ref={shadow2Ref}
+          className="absolute text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-oren text-gray-600 opacity-30 -translate-y-20"
+        >
+          Crafting Web Experiences with Precision
+        </div>
+        <div
+          ref={shadow1Ref}
+          className="absolute text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-oren text-gray-400 opacity-50 -translate-y-20"
+        >
+          Crafting Web Experiences with Precision
+        </div>
+        <div
+          ref={mainTextRef}
+          className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-oren text-white -mt-16 md:-mt-24"
+        >
+          Crafting Web Experiences with Precision
+        </div>
       </div>
-      <div
-        ref={shadow1Ref}
-        className="absolute text-4xl md:text-6xl font-bold  font-oren text-gray-400 opacity-50 z-0 -translate-y-24 pointer-events-none select-none"
-      >
-        Crafting Web Experiences with Precision
-      </div>
 
-      {/* Main moving text */}
-      <div
-        ref={mainTextRef}
-        className="absolute text-4xl md:text-6xl font-bold  font-oren text-white z-10 -translate-y-24 pointer-events-none select-none"
-      >
-        Crafting Web Experiences with Precision
-      </div>
-
-      {/* Foreground Content */}
-      <div className="z-20 relative flex items-center justify-center gap-8 px-4">
-        {/* Left Text */}
-        {/* <div className="text-left space-y-2 mt-20 max-w-[300px]">
-          <p className="text-xl md:text-2xl font-semibold text-white">
-            Hello, I am <br /> Nilima Jahan Pritom.
-          </p>
-          <p className="text-sm md:text-base text-gray-300">
-            A MERN Stack Developer <br />
-            Passionate | Creative | Problem Solver
-          </p>
-        </div> */}
-
-        {/* Center Image */}
-        <Image
-          src={MyImage}
-          alt="My Avatar"
-          width={300}
-          height={300}
-          className="object-contain rounded-b-full !border-b-2"
-          priority
-        />
-
-        {/* Right Button */}
-        <div className="flex flex-col items-center justify-center mt-20">
-          <p className="text-xl text-white mb-2 text-center">Let’s Connect</p>
-          <Button
-            shape="circle"
-            size="large"
-            type="primary"
-            icon={<ArrowRightOutlined />}
-            className="!bg-[#1D7B84] hover:!bg-[#145960] transition duration-300"
+      {/* Content Section */}
+      <div className="z-20 relative flex flex-col-reverse lg:flex-row items-center justify-between gap-6 px-4 w-full max-w-6xl">
+        {/* Button & Text */}
+      <div></div>
+        {/* Image */}
+        <div className="order-1 lg:order-2">
+          <Image
+            src={MyImage}
+            alt="My Avatar"
+            width={280}
+            height={280}
+            className="object-contain rounded-b-full border-b-2"
+            priority
           />
         </div>
       </div>
-      <div className="absolute xl:top-[890px]   top-[300px] left-0 w-full z-30 overflow-hidden pointer-events-none">
-  <motion.div
-    className="whitespace-nowrap py-2"
-    animate={{ x: ['100%', '-100%'] }}
-    transition={{
-      repeat: Infinity,
-      duration: 30,
-      ease: 'linear',
-    }}
-  >
-    <h2 className="text-8xl  text-transparent
-     stroke-purple-500 stroke-1 uppercase font-extrabold
-      tracking-widest">
-      Nilima Jahan Pritom, MERN Stack Developer |
-    </h2>
-  </motion.div>
-</div>
+
+      {/* Marquee */}
+      <div className="absolute top-[70%] md:top-[75%] lg:top-[75%] left-0 w-full z-30 overflow-hidden pointer-events-none">
+        <motion.div
+          className="whitespace-nowrap py-2"
+          animate={{ x: ['100%', '-100%'] }}
+          transition={{ repeat: Infinity, duration: 30, ease: 'linear' }}
+        >
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-transparent stroke-purple-500 stroke-1 uppercase font-extrabold tracking-widest">
+            Nilima Jahan Pritom, MERN Stack Developer |
+          </h2>
+        </motion.div>
+      </div>
     </div>
   );
 };

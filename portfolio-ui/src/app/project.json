@@ -44,7 +44,7 @@
         "backend": "https://github.com/Pritom003/Scholerly-server"
       },
       "live": {
-        "frontend": "https://scholerly.vercel.app",
+        "frontend": "https://sholerly-client.vercel.app/",
         "backend": "https://scholerly-server.vercel.app"
       },
       "type": "Full Stack"

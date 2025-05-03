@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from 'antd';
 import ProjectCard from '../Shared/cards/ProjectjctCard';
+import Link from 'next/link';
+import { ArrowRightOutlined } from '@ant-design/icons';
 // import ProjectCard from '../Shared/cards/ProjectCard';
 
 interface Project {
@@ -25,7 +27,8 @@ const Top3Carousel = ({ projects }: { projects: Project[] }) => {
 
   return (
     <div className="relative w-full flex flex-col items-center gap-6">
-      <div className="relative w-full max-w-8xl h-[400px] overflow-hidden flex flex-col gap-4 px-4 items-center justify-center">
+  <div className="relative w-full max-w-8xl h-[400px] overflow-hidden flex flex-col gap-4 px-4 items-center justify-center pointer-events-none">
+
         <AnimatePresence initial={false}>
           {projects.map((project, index) => {
             let position = 'hidden';
@@ -63,26 +66,38 @@ const Top3Carousel = ({ projects }: { projects: Project[] }) => {
 
         {/* Previous Button */}
         <button
-          onClick={handlePrev}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-3 shadow-lg hover:bg-[#1D7B84] hover:text-white transition duration-300 ease-in-out"
-        >
-          ‹
-        </button>
+  onClick={handlePrev}
+  className="pointer-events-auto absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-3 shadow-lg hover:bg-[#1D7B84] hover:text-white transition duration-300 ease-in-out"
+>
+  ‹
+</button>
 
-        {/* Next Button */}
-        <button
-          onClick={handleNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-3 shadow-lg hover:bg-[#1D7B84] hover:text-white transition duration-300 ease-in-out"
-        >
-          ›
-        </button>
+<button
+  onClick={handleNext}
+  className="pointer-events-auto absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-3 shadow-lg hover:bg-[#1D7B84] hover:text-white transition duration-300 ease-in-out"
+>
+  ›
+</button>
+
       </div>
 
-      <Button type="primary" className="rounded-full px-8 text-white bg-[#1D7B84] hover:bg-[#155d61] mt-4 md:mt-6">
-        View More Projects
-      </Button>
+      <Link href="/all-project" className='hover:border-b-2 group-hover:border-b-pink-300 pb-2 group-hover:text-[#b641b6] group-hover:cursor-pointer'> 
+     <div className="order-2 lg:order-1 flex mt-6 gap-2 w-full justify-center align-middle items-center lg:mt-0 text-center ">
+               <p className="text-2xl md:text-3xl font-bold text-white mb-2">
+                 More Works
+               </p>
+               <Button
+                 shape="circle"
+                 size="large"
+                 type="primary"
+                 icon={<ArrowRightOutlined/>}
+                 className="!bg-[#3d123d]  hover:!bg-[#145960] transition duration-300"
+               />
+             </div>
+     </Link>
     </div>
   );
 };
 
 export default Top3Carousel;
+ 

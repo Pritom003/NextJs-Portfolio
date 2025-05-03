@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Orbitron } from 'next/font/google';
 import Navbar from "@/Component/Shared/Navbar";
+import Footer from "@/Component/Shared/Footer";
 
 const orbitron = Orbitron({
   subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout({
            ${geistMono.variable} antialiased`}
       >   <Navbar></Navbar>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
